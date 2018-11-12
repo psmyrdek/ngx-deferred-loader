@@ -16,10 +16,14 @@ Using `ngx-loading-placeholder` you can defer displaying loaders for given perio
 
 ## How to
 
+Start by installing it to your project:
+
+`npm install ngx-deferred-loader`
+
 Import required module into your Angular app:
 
 ```ts
-import { DeferredLoaderModule } from '@psmyrdek/ngx-deferred-loader';
+import { DeferredLoaderModule } from 'ngx-deferred-loader';
 
 @NgModule({
   ...
