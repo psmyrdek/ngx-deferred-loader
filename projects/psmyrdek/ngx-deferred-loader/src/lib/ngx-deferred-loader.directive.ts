@@ -13,7 +13,7 @@ export class NgxDeferredLoaderDirective {
   deferredLoader: Observable<any>;
 
   @Input()
-  deferredLoaderWaitMs: number = 300;
+  deferredLoaderWaitMs: number;
 
   constructor(
     private templateRef: TemplateRef<any>,
