@@ -24,7 +24,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:lib": "ng build --project ngx-deferred-loader-lib"
   },
   "private": true,
   "dependencies": {
