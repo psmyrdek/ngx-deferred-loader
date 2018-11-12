@@ -1,6 +1,23 @@
 {
   "name": "ngx-deferred-loader",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psmyrdek/ngx-deferred-loader.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "ngx",
+    "ui",
+    "angular-http",
+    "observable"
+  ],
+  "author": "psmyrdek",
+  "bugs": {
+    "url": "https://github.com/psmyrdek/ngx-deferred-loader/issues"
+  },
+  "homepage": "https://github.com/psmyrdek/ngx-deferred-loader#readme",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
