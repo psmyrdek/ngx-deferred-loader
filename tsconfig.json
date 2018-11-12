@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@psmyrdek/ngx-deferred-loader": [
+        "dist/psmyrdek/ngx-deferred-loader"
+      ],
+      "@psmyrdek/ngx-deferred-loader/*": [
+        "dist/psmyrdek/ngx-deferred-loader/*"
+      ]
+    }
   }
 }

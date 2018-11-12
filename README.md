@@ -1,27 +1,48 @@
-# NgxDeferredLoader
+# ngx-deferred-loader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+Defer displaying loading placeholders until given period of time passes.
 
-## Development server
+![](docs/demo.gif)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## What problem does it solve
 
-## Code scaffolding
+It solves two very common problems of apps relying on async calls:
+* blinking loading placeholders in case of quick responses from back-end
+* lack of feedback in case of long running requests
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Using `ngx-loading-placeholder` you can defer displaying loaders for given period of time.
 
-## Build
+## How to
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Import required module into your Angular app:
 
-## Running unit tests
+```ts
+import { DeferredLoaderModule } from '@psmyrdek/ngx-deferred-loader';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  ...
+  imports: [
+    DeferredLoaderModule
+  ]
+  ...
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+Apply `*deferredLoader` directive to one of your loading placeholders, passing observable as an argument.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```html
+<p *deferredLoader="todoList$; waitMs:300">Please check your network connection...</p>
+<ul>
+    <li *ngFor="let todo of todoList$ | async">
+        {{ todo.name }}
+    </li>
+</ul>
+```
 
-## Further help
+In above case the loading placeholder will be displayed only if request takes more than 300ms, and will be hidden once observable is completed.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Configuration
+
+* `*deferredLoader` - expects a parameter of type `Observable<any>`
+* `waitMs` (optional) - defines period of time after which the loading placeholder is displayed (default - `200ms`)

@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "@psmyrdek/ngx-deferred-loader": {
+      "root": "projects/psmyrdek/ngx-deferred-loader",
+      "sourceRoot": "projects/psmyrdek/ngx-deferred-loader/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/psmyrdek/ngx-deferred-loader/tsconfig.lib.json",
+            "project": "projects/psmyrdek/ngx-deferred-loader/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/psmyrdek/ngx-deferred-loader/src/test.ts",
+            "tsConfig": "projects/psmyrdek/ngx-deferred-loader/tsconfig.spec.json",
+            "karmaConfig": "projects/psmyrdek/ngx-deferred-loader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/psmyrdek/ngx-deferred-loader/tsconfig.lib.json",
+              "projects/psmyrdek/ngx-deferred-loader/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-deferred-loader"
