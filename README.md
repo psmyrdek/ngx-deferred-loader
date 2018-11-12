@@ -1,8 +1,10 @@
 # ngx-deferred-loader
 
-Defer displaying loading placeholders until given period of time passes.
+Defer displaying loading placeholders until given period of time passes ⏱
 
 ![](docs/demo.gif)
+
+[⚡️  DEMO on StackBlitz](https://stackblitz.com/edit/angular-grfyy1)
 
 ## What problem does it solve
 
